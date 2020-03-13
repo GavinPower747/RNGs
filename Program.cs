@@ -8,13 +8,15 @@ namespace RNGs
 {
     class Program
     {
-        const int PerformanceIterations = 1000;
+        const int PerformanceIterations = 50000;
 
         static IRandomNumberGenerator[] rngs = new IRandomNumberGenerator[]
         {
-            new SysRandomRng(),            
+            new SysRandomRng(),
+            new LcgRng(),           
             new LfgRng(),
-            new TeaRng()
+            new MtRng(),
+            new TeaRng()            
         };
 
         static void Main(string[] args)
@@ -46,10 +48,12 @@ namespace RNGs
             GC.Collect();
             
             watch.Start();
+
             for (int i = 0; i < PerformanceIterations; i++)
             {
                 func();
             }
+
             watch.Stop();
             Console.Write(description);
             Console.WriteLine(" Time Elapsed {0} ms", watch.Elapsed.TotalMilliseconds);
@@ -79,6 +83,6 @@ namespace RNGs
             Console.Write(description);
             Console.WriteLine(" Time Elapsed {0} ms", watch.Elapsed.TotalMilliseconds);
             return watch.Elapsed.TotalMilliseconds;
-        }
+        }    
     }
 }
