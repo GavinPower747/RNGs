@@ -1,3 +1,6 @@
+//C# implementation from a port of a C library, Source lost to time....
+//Not actually using a lot of this code, to be honest it was left in the talk for comic effect.
+
 using System;
 using System.IO;
 using System.Numerics;

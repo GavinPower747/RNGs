@@ -60,6 +60,11 @@ namespace RNGs
             return watch.Elapsed.TotalMilliseconds;
         }
 
+        // So it occured to me after really thinking about this two years later that this as a measurement doesn't hold much value
+        // Since we're doing so little we end up with the thread management bloating the time on the measurement.
+        // Really what we should be looking at is the single longest time taken to generate a number rather than the cumilative time
+        // Since when dealing with parallel statements you're only as fast as your slowest time
+        // But hey, I'm not going to correct this two years later - Gav
         static double ProfileParallel(string description, Action func)
         {
             Process.GetCurrentProcess().PriorityClass = ProcessPriorityClass.High;

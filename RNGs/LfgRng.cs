@@ -1,4 +1,6 @@
-﻿using System;
+﻿//Source: Originally by James McCaffery https://jamesmccaffrey.wordpress.com/2016/05/08/a-lagged-fibonacci-random-number-generator-in-c/ 
+
+using System;
 using System.Collections.Generic;
 
 namespace RNGs.RNGs

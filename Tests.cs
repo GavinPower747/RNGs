@@ -1,6 +1,7 @@
 ﻿using RNGs.RNGs;
 using System;
 
+//Port from a C++ library
 namespace RNGs
 {
     public class Tests
